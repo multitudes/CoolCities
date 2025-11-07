@@ -27,25 +27,25 @@ struct ContentView: View {
     TabView(selection: $selectedTab) {
       
       NavigationStack {
-          
-          VStack {
-            Text("CoolCities")
-              .font(.largeTitle.bold())
-              .padding(.top, 40)
-            ScrollView{
-              Text(lorem)
-                .padding()
-              
-              
-            }
-          }
-          
-          
-          .frame(maxWidth: .infinity, maxHeight: .infinity)
         
-       
+        VStack {
+          Text("CoolCities")
+            .font(.largeTitle.bold())
+            .padding(.top, 40)
+          ScrollView{
+            Text(lorem)
+              .padding()
+            
+            
+          }
+        }
+        
+        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
+        
         .background(Color.appBackground.ignoresSafeArea().opacity(0.6))
-//        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
+        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
         
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
@@ -104,10 +104,10 @@ struct ContentView: View {
           
         }
         .background(Color.appBackground.ignoresSafeArea().opacity(0.8))
-//        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
-      
+        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
         
-//        .ignoresSafeArea(edges: .top)
+        
+        //        .ignoresSafeArea(edges: .top)
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
       }
@@ -115,9 +115,38 @@ struct ContentView: View {
         Label("Today", systemImage: "calendar.day.timeline.leading")
       }
       .tag(2)
+      
+      NavigationStack {
+        
+        VStack {
+          Text("CoolCities")
+            .font(.largeTitle.bold())
+            .padding(.top, 40)
+          ScrollView{
+            Text(lorem)
+              .padding()
+            
+            
+          }
+        }
+        
+        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
+        
+        .background(Color.appBackground.ignoresSafeArea().opacity(0.6))
+        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
+        
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
+      }
+      .tabItem {
+        Label("About", systemImage: "info.circle")
+      }
+      .tag(1)
     }
     
-
+    
     .onAppear {
       locationManager.requestLocationAuthorization()
     }
