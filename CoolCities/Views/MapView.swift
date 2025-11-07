@@ -15,6 +15,7 @@ struct MapView: View {
   }
 
   var body: some View {
+    VStack {
     Map(
       position: .constant(.region(region)),
       interactionModes: [.all]
@@ -27,10 +28,12 @@ struct MapView: View {
         }
       }
     }
-    .frame(maxWidth: .infinity)
+//    .frame(maxWidth: .infinity)
     .frame(height: 220)
     .clipShape(RoundedRectangle(cornerRadius: 12))
-    .padding([.horizontal, .bottom])
+    .padding()
+      Spacer()
+      }
   }
 }
 

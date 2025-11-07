@@ -20,30 +20,32 @@ Mauris fringilla eleifend libero ac blandit. Donec vehicula nunc sed viverra vol
 struct ContentView: View {
   @StateObject private var viewModel = WeatherViewModel()
   @StateObject private var locationManager = LocationManager()
-  @State private var selectedTab = 2
+  @State private var selectedTab = 1
   
   var body: some View {
     
     TabView(selection: $selectedTab) {
       
       NavigationStack {
-        ScrollView(.vertical, showsIndicators: false) {
           
           VStack {
             Text("CoolCities")
               .font(.largeTitle.bold())
               .padding(.top, 40)
-            
-            Text(lorem)
-              .padding()
-            
+            ScrollView{
+              Text(lorem)
+                .padding()
+              
+              
+            }
           }
           
           
           .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
-        .background(Color.appBackground.ignoresSafeArea().opacity(0.2))
-        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
+        
+       
+        .background(Color.appBackground.ignoresSafeArea().opacity(0.6))
+//        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
         
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
@@ -56,14 +58,14 @@ struct ContentView: View {
       
       // --- 2. Today Tab ---
       NavigationStack {
-        VStack(alignment: .center){
-        ScrollView(.vertical, showsIndicators: false) {
+        VStack(spacing: 0) {
           CustomSearchHeader(searchText: $viewModel.searchText, onGeoLocationTap: viewModel.onGeoLocationTap)
             .onChange(of: viewModel.searchText) { _, newValue in
               if !newValue.isEmpty {
                 viewModel.performSearch(for: newValue)
               }
             }
+          
           
           VStack {
             if viewModel.state == .isGeolocationRequested {
@@ -101,10 +103,10 @@ struct ContentView: View {
           .frame(maxWidth: .infinity, maxHeight: .infinity)
           
         }
-        .background(Color.appBackground.ignoresSafeArea().opacity(0.2))
-        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
+        .background(Color.appBackground.ignoresSafeArea().opacity(0.8))
+//        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
       
-        }
+        
 //        .ignoresSafeArea(edges: .top)
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
