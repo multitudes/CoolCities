@@ -20,7 +20,7 @@ Mauris fringilla eleifend libero ac blandit. Donec vehicula nunc sed viverra vol
 struct ContentView: View {
   @StateObject private var viewModel = WeatherViewModel()
   @StateObject private var locationManager = LocationManager()
-  @State private var selectedTab = 1
+  @State private var selectedTab = 2
   
   var body: some View {
     
@@ -56,7 +56,8 @@ struct ContentView: View {
       
       // --- 2. Today Tab ---
       NavigationStack {
-        VStack(spacing: 0) {
+        VStack(alignment: .center){
+        ScrollView(.vertical, showsIndicators: false) {
           CustomSearchHeader(searchText: $viewModel.searchText, onGeoLocationTap: viewModel.onGeoLocationTap)
             .onChange(of: viewModel.searchText) { _, newValue in
               if !newValue.isEmpty {
@@ -102,6 +103,9 @@ struct ContentView: View {
         }
         .background(Color.appBackground.ignoresSafeArea().opacity(0.2))
         .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
+      
+        }
+//        .ignoresSafeArea(edges: .top)
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
       }
