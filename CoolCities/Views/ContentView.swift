@@ -116,32 +116,10 @@ struct ContentView: View {
       }
       .tag(2)
       
-      NavigationStack {
-        
-        VStack {
-          Text("CoolCities")
-            .font(.largeTitle.bold())
-            .padding(.top, 40)
-          ScrollView{
-            Text(lorem)
-              .padding()
-            
-            
-          }
-        }
-        
-        
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-        
-        .background(Color.appBackground.ignoresSafeArea().opacity(0.6))
-        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
-        
-        .navigationTitle("")
-        .navigationBarTitleDisplayMode(.inline)
-      }
+      TabView3()
+
       .tabItem {
-        Label("About", systemImage: "info.circle")
+        Label("Chat", systemImage: "bubble.left.circle")
       }
       .tag(1)
     }
