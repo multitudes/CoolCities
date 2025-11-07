@@ -11,7 +11,16 @@ import FoundationModels
 struct TabView3: View {
   
   private let model = SystemLanguageModel.default
-  
+  let mock = Landmark(
+    id: 1,
+    name: "Sample City",
+    continent: "Europe",
+    description: "A longer description for previews.",
+    shortDescription: "A short description used for previews.",
+    latitude: 48.8566,
+    longitude: 2.3522,
+    span: 0.1
+  )
   var body: some View {
     NavigationStack {
       VStack {
@@ -27,14 +36,14 @@ struct TabView3: View {
             }
           }
         case .unavailable(.appleIntelligenceNotEnabled):
-          MessageView(
+          MessageView(landmark: mock,
             message: """
                          Trip Planner is unavailable because \
                          Apple Intelligence has not been turned on.
                          """
           )
         default:
-          MessageView(
+          MessageView(landmark: mock,
             message: """
                          Trip Planner is unavailable. Try again later.
                          """

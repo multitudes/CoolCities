@@ -8,14 +8,16 @@
 import SwiftUI
 
 
+
 struct ItineraryHeader: View {
+  let destination: Landmark
   var body: some View {
     ZStack(alignment: .topLeading) {
-      Image("background")
+      Image(destination.backgroundImageName)
         .resizable()
         .aspectRatio(contentMode: .fill)
         .clipped()
-      Image("background")
+      Image("\(destination.backgroundImageName)-thumb")
         .resizable()
         .aspectRatio(contentMode: .fill)
         .clipped()
@@ -53,7 +55,16 @@ struct ItineraryHeader: View {
   }
 }
 
-
 #Preview {
-    ItineraryHeader()
+  let mock = Landmark(
+    id: 1,
+    name: "Sample City",
+    continent: "Europe",
+    description: "A longer description for previews.",
+    shortDescription: "A short description used for previews.",
+    latitude: 48.8566,
+    longitude: 2.3522,
+    span: 0.1
+  )
+  ItineraryHeader(destination: mock)
 }

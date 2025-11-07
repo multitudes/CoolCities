@@ -9,10 +9,12 @@ import SwiftUI
 
 struct MessageView: View {
   let error: Error?
+  let landmark: Landmark
   let message: String?
   
-  init(error: Error? = nil,  message: String? = nil) {
+  init(error: Error? = nil, landmark: Landmark, message: String? = nil) {
     self.error = error
+    self.landmark = landmark
     self.message = message
   }
   
@@ -33,12 +35,22 @@ struct MessageView: View {
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(alignment: .top) {
-      ItineraryHeader()
+      ItineraryHeader(destination: landmark)
         .opacity(0.6)
     }
   }
 }
 
 #Preview {
-    MessageView(message: "This is a sample message to display to the user." )
+  let mock = Landmark(
+    id: 1,
+    name: "Sample City",
+    continent: "Europe",
+    description: "A longer description for previews.",
+    shortDescription: "A short description used for previews.",
+    latitude: 48.8566,
+    longitude: 2.3522,
+    span: 0.1
+  )
+  MessageView(landmark: mock, message: "This is a sample message to display to the user." )
 }
