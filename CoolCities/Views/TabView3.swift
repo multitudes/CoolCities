@@ -13,7 +13,7 @@ struct TabView3: View {
   private let model = SystemLanguageModel.default
   let mock = Landmark(
     id: 1,
-    name: "Sample City",
+    name: "Berlin",
     continent: "Europe",
     description: "A longer description for previews.",
     shortDescription: "A short description used for previews.",
@@ -26,15 +26,7 @@ struct TabView3: View {
       VStack {
         switch model.availability {
         case .available:
-          VStack {
-            Text("Chat with CoolCities")
-              .font(.largeTitle.bold())
-              .padding(.top, 40)
-            ScrollView{
-              Text(lorem)
-                .padding()
-            }
-          }
+          ChatView(landmark: mock)
         case .unavailable(.appleIntelligenceNotEnabled):
           MessageView(landmark: mock,
             message: """
