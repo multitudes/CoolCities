@@ -9,11 +9,23 @@ import Combine
 import CoreLocation
 
 let lorem = """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare imperdiet justo quis fringilla. Fusce molestie porttitor quam ut auctor. Etiam feugiat ligula at tortor fermentum, vel egestas lacus vulputate. Morbi ornare sagittis enim ut porttitor. Aliquam nec nibh eget elit lobortis hendrerit non at mi. Phasellus et felis ut tellus molestie fermentum. Nunc blandit sem ac ante porta tincidunt. Nunc nec risus at mi pulvinar dapibus. Proin interdum magna diam. Nullam nec eleifend dolor, rutrum volutpat neque. Vestibulum iaculis, leo sit amet varius consectetur, ante nibh rhoncus urna, vel porttitor nulla odio eleifend diam. Pellentesque nec vestibulum sapien. Ut vitae nisl tincidunt, vulputate risus ut, elementum massa.
+💎 Idea
+CoolCities ❄️ helps tourists and locals plan their days and routes to stay comfortable during hot weather. Using high-resolution satellite data, the app guides users to cooler streets, parks, and green corridors in and around metropolitan areas. Tourists and residents can discover cooler routes, sights and activities, while locals can get to work without breaking a sweat.
 
-Nunc egestas porta interdum. Maecenas tristique eros ut enim sollicitudin aliquet. Sed auctor metus sed ornare congue. Fusce at tellus neque. Phasellus viverra ante urna, a maximus dui consectetur id. Nullam eu lacus ut nulla efficitur iaculis a quis diam. Sed ut vestibulum nisi, non tempor ante. In eget semper erat, sed laoreet neque.
+🛰️ EU space technologies
+CoolCities combines data from Copernicus Sentinel 2 and 3 to detect land temperature and vegetation cooling, providing temperature maps at 10 m resolution. Galileo global navigation satellites provide precise positioning for routing through the temperature map. In AR mode, a friendly mascot leads you along your path. CoolCities translates EU space data into user comfort and wellness.
 
-Mauris fringilla eleifend libero ac blandit. Donec vehicula nunc sed viverra volutpat. Nunc tincidunt volutpat scelerisque. Etiam tortor dui, pulvinar sit amet suscipit in, blandit a tellus. Curabitur est felis, tincidunt sed urna quis, porttitor eleifend nulla. Praesent blandit lacinia posuere. Sed sollicitudin, lorem at hendrerit cursus, erat velit pulvinar tortor, sed mattis sapien tortor vel urna. Pellentesque vel fringilla tortor. Aenean eu libero tempor, elementum purus id, ultrices leo. Ut nec auctor diam, ac scelerisque sapien. Aliquam erat volutpat. Pellentesque at elit vitae erat semper auctor. Ut felis lacus, consectetur in ornare at, consequat vel mi. Donec ante est, laoreet vitae metus nec, interdum consectetur leo.
+🚀 EU Space for Consumer Experience (Challenge #3)
+We address “Beyond Horizons – Redefining Travel with Space Innovation.”
+CoolCities optimizes travel and local exploration by enabling users to plan around heat-island effects, maximizing comfort and well-being during their activities. It helps visitors and citizens navigate safely and comfortably during hot weather and promotes greater climate awareness in travel and tourism.
+
+
+🤼 Team
+
+Stephen – Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.
+Laurent – iOS engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.
+Jen - User experience expert, her role is to manage and analyze all customer and potential customer interactions and data
+Matthias – Data scientist specializing in analysis and modeling. Handles data processing and fusion of Sentinel and Galileo datasets into usable temperature and navigation layers.
 
 """
 
@@ -27,25 +39,27 @@ struct ContentView: View {
     TabView(selection: $selectedTab) {
       
       NavigationStack {
-          
-          VStack {
+        
+        VStack {
+          Image("CoolCities")
+            .resizable()
+            .scaledToFit()
+            .padding()
+            .frame(maxWidth: 200)
+          ScrollView{
             Text("CoolCities")
-              .font(.largeTitle.bold())
-              .padding(.top, 40)
-            ScrollView{
-              Text(lorem)
-                .padding()
-              
-              
-            }
+              .font(.largeTitle)
+            Text(lorem)
+              .padding()
+            
+            
           }
           
-          
-          .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-       
+        }
+
+        .frame(maxWidth: .infinity)
         .background(Color.appBackground.ignoresSafeArea().opacity(0.6))
-//        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
+        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
         
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
@@ -104,10 +118,10 @@ struct ContentView: View {
           
         }
         .background(Color.appBackground.ignoresSafeArea().opacity(0.8))
-//        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
-      
+        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
         
-//        .ignoresSafeArea(edges: .top)
+        
+        //        .ignoresSafeArea(edges: .top)
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
       }
@@ -115,9 +129,16 @@ struct ContentView: View {
         Label("Today", systemImage: "calendar.day.timeline.leading")
       }
       .tag(2)
+      
+      TabView3()
+
+      .tabItem {
+        Label("Chat", systemImage: "bubble.left.circle")
+      }
+      .tag(1)
     }
     
-
+    
     .onAppear {
       locationManager.requestLocationAuthorization()
     }
