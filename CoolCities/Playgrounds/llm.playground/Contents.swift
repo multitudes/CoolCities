@@ -33,7 +33,8 @@ Task {
     let session = LanguageModelSession()
     
     // Asynchronously generate a response from a text prompt.
-    let response = try await session.respond(to: "Generate a 3-day itinerary to Berlin.")
+    let response = try await session.respond(to: "Generate a 3-day itinerary to Berlin. Tell me about cooler spots to visit because it is quite hot today ")
+    print(response)
   } catch {
     print("Error during LLM interaction:", error)
     
