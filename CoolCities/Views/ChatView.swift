@@ -1,4 +1,4 @@
-// 
+//
 //  ChatView.swift
 //  CoolCities
 //
@@ -26,7 +26,7 @@ struct ChatView: View {
       VStack(alignment: .leading, spacing: 16) {
         // 1. Title
         Text(landmark.name)
-          .padding(.top, 150)
+          .padding(.top, 70)
           .font(.largeTitle)
           .fontWeight(.bold)
         
@@ -37,7 +37,7 @@ struct ChatView: View {
         } else if !generator.response.isEmpty {
           Text(generator.response)
             .padding()
-            .background(Color.secondary.opacity(0.1))
+            .background(Color.secondary.opacity(0.2))
             .cornerRadius(8)
         }
         
@@ -51,34 +51,32 @@ struct ChatView: View {
         // 2. User Input TextField
         TextField("Ask about \(landmark.name)...", text: $promptText)
           .textFieldStyle(.roundedBorder)
-          .padding(.horizontal)
+          .padding()
         
         // 4. Button to trigger LLM call
         ItineraryButton {
           isLoading = true
-          // Simulate network call
-//          try await Task.sleep(nanoseconds: 2_000_000_000)
-//          llmResponse = "This is a sample response from the LLM for your prompt: '\(promptText)'."
           Task {
             do {
-           await generator.generateItinerary(prompt: promptText)
-              
-          isLoading = false
-              }
+              await generator.generateItinerary(prompt: promptText)
+              isLoading = false
+              promptText = ""
             }
+          }
         }
       }
+      .background(.ultraThinMaterial.opacity(0.50))
     }
+    .ignoresSafeArea(edges: .top)
     .task {
       // MARK: - [CODE-ALONG] Chapter 1.6.2: Create the generator when the view appears
       // MARK: - [CODE-ALONG] Chapter 6.1.2: Pre-warm the model when the view appears
       
     }
-    .headerStyle(landmark: landmark)
   }
 }
-#Preview {
 
+#Preview {
   let mock = Landmark(
     id: 1,
     name: "Berlin",
@@ -92,7 +90,7 @@ struct ChatView: View {
   return ChatView(landmark: mock)
 }
 
-import SwiftUI
+
 
 struct ItineraryButton: View {
   @State private var showButton: Bool = false
@@ -104,6 +102,7 @@ struct ItineraryButton: View {
         showButton = false
         Task { @MainActor in
           try await closure()
+          showButton = true
         }
       }
       label: {
@@ -112,7 +111,7 @@ struct ItineraryButton: View {
           .padding()
       }
       .buttonStyle(.bordered)
-      .padding()
+//      .padding()
       .opacity(showButton ? 1 : 0)
       .animation(
         .easeInOut(duration: 0.5),
@@ -127,42 +126,48 @@ struct ItineraryButton: View {
   }
 }
 
-extension View {
-  
-//  func rationaleStyle() -> some View {
-//    modifier(RationaleModifier())
-//  }
-  
-//  func itineraryStyle() -> some View {
-//    modifier(ItineraryModifier())
-//  }
-//  
-//  func card() -> some View {
-//    modifier(CardModifier())
-//  }
-//  
-//  func tagStyle() -> some View {
-//    modifier(TagStyleModifier())
-//  }
-//  
-//  func blurredBackground() -> some View {
-//    modifier(BlurredBackgroundModifier())
-//  }
-  
-  func headerStyle(landmark: Landmark) -> some View {
-    modifier(HeaderStyle(landmark: landmark))
+#Preview {
+  ItineraryButton {
+    print("Done")
   }
 }
 
-struct HeaderStyle: ViewModifier {
-  let landmark: Landmark
+extension View {
   
-  func body(content: Content) -> some View {
-    content
-      .background(alignment: .top) {
-        ItineraryHeader(destination: landmark)
-      }
-      .frame(maxWidth: .infinity, maxHeight: .infinity)
-  }
+  //  func rationaleStyle() -> some View {
+  //    modifier(RationaleModifier())
+  //  }
+  
+  //  func itineraryStyle() -> some View {
+  //    modifier(ItineraryModifier())
+  //  }
+  //
+  //  func card() -> some View {
+  //    modifier(CardModifier())
+  //  }
+  //
+  //  func tagStyle() -> some View {
+  //    modifier(TagStyleModifier())
+  //  }
+  //
+  //  func blurredBackground() -> some View {
+  //    modifier(BlurredBackgroundModifier())
+  //  }
+  
+//  func headerStyle(landmark: Landmark) -> some View {
+//    modifier(HeaderStyle(landmark: landmark))
+//  }
 }
+//
+//struct HeaderStyle: ViewModifier {
+//  let landmark: Landmark
+//  
+//  func body(content: Content) -> some View {
+//    content
+//      .background(alignment: .top) {
+//        ItineraryHeader(destination: landmark)
+//      }
+////      .frame(maxWidth: .infinity)
+//  }
+//}
 

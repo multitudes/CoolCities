@@ -31,7 +31,7 @@ final class ItineraryGenerator : ObservableObject {
   init() {
     let instructions = """
         Your job is to help the user to find nice spots in berlin to travel and visit. 
-        
+        Please always propose locations which are cooler to visit when the weather is hot.
         """
     self.session = LanguageModelSession(instructions: instructions)
     
@@ -43,11 +43,14 @@ final class ItineraryGenerator : ObservableObject {
   func generateItinerary(prompt: String, dayCount: Int = 3) async {
     do {
 //      let prompt = "Generate a \(dayCount)-day itinerary to \(landmark.name)."
+      
       let llmresponse = try await session.respond(to: prompt)
       self.response = llmresponse.content
       self.itineraryContent = llmresponse.content
     } catch {
       self.error = error
+      print(error)
+      self.response = ""
     }
     
     // MARK: - [CODE-ALONG] Chapter 2.3.2: Update to use Generables
