@@ -31,7 +31,6 @@ final class ItineraryGenerator : ObservableObject {
   init() {
     let instructions = """
         Your job is to help the user to find nice spots in berlin to travel and visit. 
-        Please always propose locations which are cooler to visit when the weather is hot.
         """
     self.session = LanguageModelSession(instructions: instructions)
     
