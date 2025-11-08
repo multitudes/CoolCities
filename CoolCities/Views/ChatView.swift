@@ -4,41 +4,70 @@
 //
 //  Created by Laurent Brusa on 07/11/2025.
 //
+//
+//  ChatView.swift
+//  CoolCities
+//
+//  Created by Laurent Brusa on 07/11/2025.
+//
 
 import SwiftUI
 
 struct ChatView: View {
   let landmark: Landmark
-  @State private var itineraryGenerator: ItineraryGenerator?
+  @StateObject private var generator: ItineraryGenerator = ItineraryGenerator()
   @State private var requestedItinerary: Bool = false
+  @State private var promptText: String = ""
+  @State private var llmResponse: String = ""
+  @State private var isLoading: Bool = false
   
   var body: some View {
     ScrollView {
-      if !requestedItinerary {
-        VStack(alignment: .leading, spacing: 16) {
-          Text(landmark.name)
-            .padding(.top, 150)
-            .font(.largeTitle)
-            .fontWeight(.bold)
-          
-          Text(landmark.shortDescription)
+      VStack(alignment: .leading, spacing: 16) {
+        // 1. Title
+        Text(landmark.name)
+          .padding(.top, 150)
+          .font(.largeTitle)
+          .fontWeight(.bold)
+        
+        // 3. LLM Response View
+        if isLoading {
+          ProgressView()
+            .frame(maxWidth: .infinity)
+        } else if !generator.response.isEmpty {
+          Text(generator.response)
+            .padding()
+            .background(Color.secondary.opacity(0.1))
+            .cornerRadius(8)
         }
-        .padding(.horizontal)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        
+        Spacer()
       }
-      // MARK: - [CODE-ALONG] Chapter 1.6.3: Replace EmptyView with model output
-      // MARK: - [CODE-ALONG] Chapter 2.4: Update the Text view with `ItineraryView`
-      else {
-        EmptyView()
-      }
+      .padding(.horizontal)
+      .frame(maxWidth: .infinity, alignment: .leading)
     }
-    .scrollDisabled(!requestedItinerary)
     .safeAreaInset(edge: .bottom) {
-      // MARK: - [CODE-ALONG] Chapter 1.6.4: Generate itinerary and show the button
-      ItineraryButton {
-        requestedItinerary = true
+      VStack {
+        // 2. User Input TextField
+        TextField("Ask about \(landmark.name)...", text: $promptText)
+          .textFieldStyle(.roundedBorder)
+          .padding(.horizontal)
+        
+        // 4. Button to trigger LLM call
+        ItineraryButton {
+          isLoading = true
+          // Simulate network call
+//          try await Task.sleep(nanoseconds: 2_000_000_000)
+//          llmResponse = "This is a sample response from the LLM for your prompt: '\(promptText)'."
+          Task {
+            do {
+           await generator.generateItinerary(prompt: promptText)
+              
+          isLoading = false
+              }
+            }
+        }
       }
-      .hidden()
     }
     .task {
       // MARK: - [CODE-ALONG] Chapter 1.6.2: Create the generator when the view appears
@@ -48,12 +77,11 @@ struct ChatView: View {
     .headerStyle(landmark: landmark)
   }
 }
-
 #Preview {
 
   let mock = Landmark(
     id: 1,
-    name: "Sample City",
+    name: "Berlin",
     continent: "Europe",
     description: "A longer description for previews.",
     shortDescription: "A short description used for previews.",
@@ -79,7 +107,7 @@ struct ItineraryButton: View {
         }
       }
       label: {
-        Label("Generate Itinerary", systemImage: "sparkles")
+        Label("Generate Answer", systemImage: "sparkles")
           .fontWeight(.bold)
           .padding()
       }
@@ -137,3 +165,4 @@ struct HeaderStyle: ViewModifier {
       .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
 }
+

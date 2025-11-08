@@ -7,14 +7,17 @@
 import Foundation
 import FoundationModels
 import Observation
+import Combine
 
-@Observable
+
 @MainActor
-final class ItineraryGenerator {
+final class ItineraryGenerator : ObservableObject {
   
+  @Published var response: String = ""
   var error: Error?
-  let landmark: Landmark
+  let landmark: Landmark? = nil
   
+  @ObservationIgnored
   private var session: LanguageModelSession
   
   // MARK: - [CODE-ALONG] Chapter 2.3.1: Update to Generable
@@ -25,13 +28,10 @@ final class ItineraryGenerator {
   // MARK: - [CODE-ALONG] Chapter 5.3.1: Add a property to hold the tool
   
   
-  init(landmark: Landmark) {
-    self.landmark = landmark
+  init() {
     let instructions = """
-        Your job is to create an itinerary for the user.
-        Each day needs an activity, hotel and restaurant.
+        Your job is to help the user to find nice spots in berlin to travel and visit. 
         
-        Always include a title, a short description, and a day-by-day plan.
         """
     self.session = LanguageModelSession(instructions: instructions)
     
@@ -40,11 +40,12 @@ final class ItineraryGenerator {
     
   }
   
-  func generateItinerary(dayCount: Int = 3) async {
+  func generateItinerary(prompt: String, dayCount: Int = 3) async {
     do {
-      let prompt = "Generate a \(dayCount)-day itinerary to \(landmark.name)."
-      let response = try await session.respond(to: prompt)
-      self.itineraryContent = response.content
+//      let prompt = "Generate a \(dayCount)-day itinerary to \(landmark.name)."
+      let llmresponse = try await session.respond(to: prompt)
+      self.response = llmresponse.content
+      self.itineraryContent = llmresponse.content
     } catch {
       self.error = error
     }
@@ -62,3 +63,4 @@ final class ItineraryGenerator {
     // MARK: - [CODE-ALONG] Chapter 6.1.1: Add a function to pre-warm the model
   }
 }
+
