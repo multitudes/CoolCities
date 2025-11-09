@@ -18,24 +18,23 @@ struct TeamMember: Identifiable {
 // 2. Create the array of team members
 let team: [TeamMember] = [
   TeamMember(name: "Stephen", description: "Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.", imageName: "stephen"),
-  TeamMember(name: "Laurent", description: "iOS engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.", imageName: "laurent"),
-  TeamMember(name: "Jen", description: "User experience expert, her role is to manage and analyze all customer and potential customer interactions and data.", imageName: "jen"),
+  TeamMember(name: "Laurent", description: "Software engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.", imageName: "laurent"),
+  TeamMember(name: "Jen", description: "Business consultant and product manager with cross-cultural experience, harnessing deep insights to turn ideas into strategic impact. ", imageName: "jen"),
   TeamMember(name: "Matthias", description: "Data scientist specializing in analysis and modeling. Handles data processing and fusion of Sentinel and Galileo datasets into usable temperature and navigation layers.", imageName: "matthias")
 ]
 
-let aboutApp = """
-
-CoolCities ❄️ helps tourists and locals plan their days and routes to stay comfortable during hot weather. Using high-resolution satellite data, the app guides users to cooler streets, parks, and green corridors in and around metropolitan areas. Tourists and residents can discover cooler routes, sights and activities, while locals can get to work without breaking a sweat.
-
-EU space technologies
+let aboutApp1 = """
+CoolCities helps tourists and locals plan their days and routes to stay comfortable during hot weather. Using high-resolution satellite data, the app guides users to cooler streets, parks, and green corridors in and around metropolitan areas. Tourists and residents can discover cooler routes, sights and activities, while locals can get to work without breaking a sweat.
+"""
+let aboutApp2 = """
 CoolCities combines data from Copernicus Sentinel 2 and 3 to detect land temperature and vegetation cooling, providing temperature maps at 10 m resolution. Galileo global navigation satellites provide precise positioning for routing through the temperature map. In AR mode, a friendly mascot leads you along your path. CoolCities translates EU space data into user comfort and wellness.
+"""
 
+let aboutApp3 = """
 EU Space for Consumer Experience (Challenge #3)
 We address “Beyond Horizons – Redefining Travel with Space Innovation.”
 CoolCities optimizes travel and local exploration by enabling users to plan around heat-island effects, maximizing comfort and well-being during their activities. It helps visitors and citizens navigate safely and comfortably during hot weather and promotes greater climate awareness in travel and tourism.
 """
-
-
 // 3. Create a reusable view for a single team member
 struct TeamMemberView: View {
   let member: TeamMember
@@ -96,7 +95,18 @@ struct ContentView: View {
           ScrollView{
             Text("CoolCities")
               .font(.largeTitle)
-            Text(aboutApp)
+              .padding(.bottom)
+            Text("Finding Microclimates in Your City")
+              .font(.title2)
+            Text(aboutApp1)
+              .padding()
+            Text("EU Space Technologies")
+              .font(.title2)
+            Text(aboutApp2)
+              .padding()
+            Text("Beyond Horizons")
+              .font(.title2)
+            Text(aboutApp3)
               .padding()
             Text("Team")
               .font(.title2)
@@ -190,26 +200,24 @@ struct ContentView: View {
         }
         .tag(1)
     }
-    
-    
     .onAppear {
       locationManager.requestLocationAuthorization()
     }
     .onChange(of: selectedTab) {
       viewModel.reset()
     }
-    .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-      .onEnded({ value in
-        if value.translation.width < 0 {
-          print("Left Swipe")
-          selectedTab = min(selectedTab + 1, 3)
-        }
-        if value.translation.width > 0 {
-          print("Right Swipe")
-          selectedTab = max(selectedTab - 1, 1)
-        }
-        viewModel.reset()
-      }))
+//    .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+//      .onEnded({ value in
+//        if value.translation.width < 0 {
+//          print("Left Swipe")
+//          selectedTab = min(selectedTab + 1, 3)
+//        }
+//        if value.translation.width > 0 {
+//          print("Right Swipe")
+//          selectedTab = max(selectedTab - 1, 1)
+//        }
+//        viewModel.reset()
+//      }))
   }
 }
 
