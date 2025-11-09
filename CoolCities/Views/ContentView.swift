@@ -20,7 +20,7 @@ let team: [TeamMember] = [
   TeamMember(name: "Stephen", description: "Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.", imageName: "stephen"),
   TeamMember(name: "Laurent", description: "Software engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.", imageName: "laurent"),
   TeamMember(name: "Jen", description: "Business consultant and product manager with cross-cultural experience, harnessing deep insights to turn ideas into strategic impact. ", imageName: "jen"),
-  TeamMember(name: "Matthias", description: "Data scientist specializing in analysis and modeling. Handles data processing and fusion of Sentinel and Galileo datasets into usable temperature and navigation layers.", imageName: "matthias")
+  TeamMember(name: "Matthias", description: "Artist and IT aficionado focused on location tracking and spatial data analysis.", imageName: "matthias")
 ]
 
 let aboutApp1 = """
@@ -198,7 +198,7 @@ struct ContentView: View {
         .tabItem {
           Label("Chat", systemImage: "bubble.left.circle")
         }
-        .tag(1)
+        .tag(3)
     }
     .onAppear {
       locationManager.requestLocationAuthorization()

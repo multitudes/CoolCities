@@ -5,7 +5,7 @@ struct MapView: View {
   let coordinate: CLLocationCoordinate2D
   let span: MKCoordinateSpan
   
-  init(coordinate: CLLocationCoordinate2D, span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)) {
+  init(coordinate: CLLocationCoordinate2D, span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)) {
     self.coordinate = coordinate
     self.span = span
   }
@@ -166,7 +166,7 @@ struct OverlayMapView: UIViewRepresentable {
       }
       if let tileOverlay = overlay as? MKTileOverlay {
         let renderer = MKTileOverlayRenderer(tileOverlay: tileOverlay)
-        renderer.alpha = 0.4
+        renderer.alpha = 0.3
         return renderer
       }
       return MKOverlayRenderer(overlay: overlay)
