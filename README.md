@@ -34,10 +34,14 @@ tourists.
 
 
 ## resources
-https://openweathermap.org/api/air-pollution
-https://www.canva.com/design/DAEhUeYe_fo/view
-https://overpass-turbo.eu
-https://www.hotmaps-project.eu
-https://taikai.network/cassinihackathons/hackathons/eu-space-consumer-experience/projects/cmhoxqgry003vxtcrhox121xq/idea
-https://docs.google.com/presentation/d/1rOpuinjhQRLigFzxIPRugccIPAzdq14W_2MYken6yug/edit?slide=id.gcb9a0b074_1_0#slide=id.gcb9a0b074_1_0
+https://www.cassini.eu/hackathons/sites/default/files/2024-11/Business%20Design%20Playbook_update.pdf  
+https://openweathermap.org/api/air-pollution  
+https://www.canva.com/design/DAEhUeYe_fo/view  
+https://overpass-turbo.eu  
+https://www.hotmaps-project.eu  
+https://taikai.network/cassinihackathons/hackathons/eu-space-consumer-experience/projects/cmhoxqgry003vxtcrhox121xq/idea  
+https://docs.google.com/presentation/d/1rOpuinjhQRLigFzxIPRugccIPAzdq14W_2MYken6yug/edit?slide=id.gcb9a0b074_1_0#slide=id.gcb9a0b074_1_0  
+https://www.cassini.eu/hackathons/sites/default/files/2025-11/Participant%20Playbook_10th%20CASSINI%20Hackathon_1.pdf  
+https://github.com/cassinihackathons  
+https://kineis.com  
 
