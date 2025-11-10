@@ -44,4 +44,7 @@ https://docs.google.com/presentation/d/1rOpuinjhQRLigFzxIPRugccIPAzdq14W_2MYken6
 https://www.cassini.eu/hackathons/sites/default/files/2025-11/Participant%20Playbook_10th%20CASSINI%20Hackathon_1.pdf  
 https://github.com/cassinihackathons  
 https://kineis.com  
+https://dataspace.copernicus.eu/data-collections/copernicus-sentinel-missions  
+https://www.cassini.eu/hackathons/tools  
+
 
