@@ -31,3 +31,13 @@ For instance I think we need:
 
 ## The users (targets)
 tourists. 
+
+
+## resources
+https://openweathermap.org/api/air-pollution
+https://www.canva.com/design/DAEhUeYe_fo/view
+https://overpass-turbo.eu
+https://www.hotmaps-project.eu
+https://taikai.network/cassinihackathons/hackathons/eu-space-consumer-experience/projects/cmhoxqgry003vxtcrhox121xq/idea
+https://docs.google.com/presentation/d/1rOpuinjhQRLigFzxIPRugccIPAzdq14W_2MYken6yug/edit?slide=id.gcb9a0b074_1_0#slide=id.gcb9a0b074_1_0
+
