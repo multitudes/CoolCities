@@ -69,8 +69,6 @@ struct ChatView: View {
     }
     .ignoresSafeArea(edges: .top)
     .task {
-      // MARK: - [CODE-ALONG] Chapter 1.6.2: Create the generator when the view appears
-      // MARK: - [CODE-ALONG] Chapter 6.1.2: Pre-warm the model when the view appears
       
     }
   }
@@ -131,43 +129,4 @@ struct ItineraryButton: View {
     print("Done")
   }
 }
-
-extension View {
-  
-  //  func rationaleStyle() -> some View {
-  //    modifier(RationaleModifier())
-  //  }
-  
-  //  func itineraryStyle() -> some View {
-  //    modifier(ItineraryModifier())
-  //  }
-  //
-  //  func card() -> some View {
-  //    modifier(CardModifier())
-  //  }
-  //
-  //  func tagStyle() -> some View {
-  //    modifier(TagStyleModifier())
-  //  }
-  //
-  //  func blurredBackground() -> some View {
-  //    modifier(BlurredBackgroundModifier())
-  //  }
-  
-//  func headerStyle(landmark: Landmark) -> some View {
-//    modifier(HeaderStyle(landmark: landmark))
-//  }
-}
-//
-//struct HeaderStyle: ViewModifier {
-//  let landmark: Landmark
-//  
-//  func body(content: Content) -> some View {
-//    content
-//      .background(alignment: .top) {
-//        ItineraryHeader(destination: landmark)
-//      }
-////      .frame(maxWidth: .infinity)
-//  }
-//}
 

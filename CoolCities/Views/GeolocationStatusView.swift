@@ -93,13 +93,6 @@ struct GeolocationStatusView: View {
         }
       }
       .padding(40)
-//      .background(
-//        LinearGradient(
-//          gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
-//          startPoint: .top,
-//          endPoint: .bottom
-//        )
-//      )
       .cornerRadius(20)
       .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 10)
       .padding()

@@ -15,7 +15,6 @@ struct TeamMember: Identifiable {
   let imageName: String
 }
 
-// 2. Create the array of team members
 let team: [TeamMember] = [
   TeamMember(name: "Stephen", description: "Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.", imageName: "stephen"),
   TeamMember(name: "Laurent", description: "Software engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.", imageName: "laurent"),
@@ -35,7 +34,7 @@ EU Space for Consumer Experience (Challenge #3)
 We address “Beyond Horizons – Redefining Travel with Space Innovation.”
 CoolCities optimizes travel and local exploration by enabling users to plan around heat-island effects, maximizing comfort and well-being during their activities. It helps visitors and citizens navigate safely and comfortably during hot weather and promotes greater climate awareness in travel and tourism.
 """
-// 3. Create a reusable view for a single team member
+
 struct TeamMemberView: View {
   let member: TeamMember
   let isReversed: Bool
@@ -122,8 +121,6 @@ struct ContentView: View {
         
         .frame(maxWidth: .infinity)
         .background(Color.appBackground.ignoresSafeArea().opacity(0.6))
-        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
-        
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
       }
@@ -133,7 +130,6 @@ struct ContentView: View {
       .tag(1)
       
       
-      // --- 2. Today Tab ---
       NavigationStack {
         VStack(spacing: 0) {
           CustomSearchHeader(searchText: $viewModel.searchText, onGeoLocationTap: viewModel.onGeoLocationTap)
@@ -142,8 +138,6 @@ struct ContentView: View {
                 viewModel.performSearch(for: newValue)
               }
             }
-          
-          
           VStack {
             if viewModel.state == .isGeolocationRequested {
               GeolocationStatusView(locationManager: locationManager, weatherViewModel: viewModel)
@@ -181,10 +175,6 @@ struct ContentView: View {
           
         }
         .background(Color.appBackground.ignoresSafeArea().opacity(0.8))
-        //        .background(Image("weather").resizable().ignoresSafeArea().opacity(0.6))
-        
-        
-        //        .ignoresSafeArea(edges: .top)
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
       }

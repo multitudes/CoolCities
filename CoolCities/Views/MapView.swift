@@ -81,9 +81,9 @@ struct OverlayMapView: UIViewRepresentable {
   let coordinate: CLLocationCoordinate2D
   let span: MKCoordinateSpan
   
-  // 1. Define the tile overlay with the URL to your tile server.
+  // Define the tile overlay with the URL to the tile server.
   // This example uses OpenWeatherMap temperature layer.
-  // You need to get an API key from openweathermap.org
+  // need to get an API key from openweathermap.org
   class WeatherTileOverlay: MKTileOverlay {
     override init(urlTemplate: String?) {
       super.init(urlTemplate: urlTemplate)
