@@ -1,6 +1,5 @@
 # Getting the raw data
 
-
 We do fetching and processing satellite imagery from the Sentinel Hub service. 
 
 ### How it Works
