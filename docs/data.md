@@ -13,7 +13,7 @@ We do fetching and processing satellite imagery from the Sentinel Hub service.
 Two types of overlay data are produced: a high-resolution NDVI grid and a coarse-resolution LST grid.
 
 We make two separate requests to the Sentinel Hub "Process API":
-- One request to obtain Normalized Difference Vegetation Index (NDVI) imagery derived from Sentinel-2.
+- One request to obtain Normalized Difference Vegetation Index (NDVI) imagery derived from Sentinel-2.  
 - One request to obtain Land Surface Temperature (LST) imagery derived from Sentinel-3 (SLSTR).
 
 1.  **Authentication**: Before calling the Process API the app obtains an OAuth access token. The token is cached to avoid re-requesting it for every call; client credentials must be stored securely (for example in environment variables or a private secrets store).
