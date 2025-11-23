@@ -1,5 +1,3 @@
-# CoolCities
-
 <p align="center">
   <picture>
     <source srcset="assets/logo/logo-dark.png" media="(prefers-color-scheme: dark)">
@@ -7,15 +5,14 @@
   </picture>
 </p>
 
-## 3rd Prize - Cassini Hackathon 2025 - Germany
-
+# CoolCities - 3rd Prize Cassini Hackathon 2025 - Germany
 
 # Team
 
-- Stephen – Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.
-- Laurent – iOS engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.
-- Jen - User experience expert, her role is to manage and analyze all customer and potential customer interactions and data
-- Matthias – Data scientist specializing in analysis and modeling. Handles data processing and fusion of Sentinel and Galileo datasets into usable temperature and navigation layers.
+- [Stephen](https://github.com/sjtobin) – Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.
+- [Laurent](https://github.com/multitudes) – iOS engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.
+- [Jen](https://github.com/jng-jng) - User experience expert, her role is to manage and analyze all customer and potential customer interactions and data
+- [Matthias](https://github.com/uschi909) – Data scientist specializing in analysis and modeling. Handles data processing and fusion of Sentinel and Galileo datasets into usable temperature and navigation layers.
 
 ## Our Idea
 - Category "Beyond Horizons – Redefining Travel with Space Innovation"
