@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source srcset="assets/logo/logo-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="assets/logo/logo-light.png" alt="CoolCities logo" width="280">
+  </picture>
+</p>
+
 # Getting the raw data
 
 We do fetching and processing satellite imagery from the Sentinel Hub service. 
@@ -11,7 +18,13 @@ We make two separate requests to the Sentinel Hub "Process API":
 
 1.  **Authentication**: Before calling the Process API the app obtains an OAuth access token. The token is cached to avoid re-requesting it for every call; client credentials must be stored securely (for example in environment variables or a private secrets store).
 2.  **Data Processing**: The Process API can return the processed data as a PNG image. The app decodes the PNG into a raster and maps grayscale pixel values back into scientific values (NDVI in the range -1.0 to 1.0, and temperature in Celsius).
-3.  **Fallback**: If an API call fails or is unavailable, the app produces synthetic fallback data so overlays can still be displayed for demo or testing purposes.
+3.  **Fallback**: If an API call fails or is unavailable, the app will show the appropriate alert.
+
+<div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:16px 0">
+  <img src="assets/Overlays/Overlay1.jpg" alt="Overlay 1" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="assets/Overlays/Overlay2.jpg" alt="Overlay 2" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="assets/Overlays/Overlay3.jpg" alt="Overlay 3" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+</div>
 
 ### Your Questions Answered
 
