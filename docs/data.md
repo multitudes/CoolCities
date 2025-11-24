@@ -7,18 +7,28 @@
 
 # Getting the raw data
 
-We do fetching and processing satellite imagery from the Sentinel Hub service. 
+We fetch and process satellite imagery from the Sentinel Hub service to generate the overlay layers used in the app.
+
+<!-- Sentinel satellite images: drop `sentinel2.jpeg` and `sentinel3.jpeg` into docs/assets/ -->
+<div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:12px 0">
+  <img src="assets/sentinel2.jpeg" alt="Sentinel-2" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="assets/sentinel3.jpeg" alt="Sentinel-3" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+</div>
 
 ### How it Works
-Two types of overlay data are produced: a high-resolution NDVI grid and a coarse-resolution LST grid.
+We produce two main overlay types:
 
-We make two separate requests to the Sentinel Hub "Process API":
-- One request to obtain Normalized Difference Vegetation Index (NDVI) imagery derived from Sentinel-2.  
-- One request to obtain Land Surface Temperature (LST) imagery derived from Sentinel-3 (SLSTR).
+- High-resolution NDVI (vegetation index) derived from Sentinel-2 imagery.
+- Land Surface Temperature (LST) derived from Sentinel-3 SLSTR observations.
 
-1.  **Authentication**: Before calling the Process API the app obtains an OAuth access token. The token is cached to avoid re-requesting it for every call; client credentials must be stored securely (for example in environment variables or a private secrets store).
-2.  **Data Processing**: The Process API can return the processed data as a PNG image. The app decodes the PNG into a raster and maps grayscale pixel values back into scientific values (NDVI in the range -1.0 to 1.0, and temperature in Celsius).
-3.  **Fallback**: If an API call fails or is unavailable, the app will show the appropriate alert.
+Summary of the processing pipeline:
+
+1. **Authentication** — the app obtains an OAuth access token (cached) using private client credentials. Keep credentials out of the public repository.
+2. **Server-side processing** — the app sends a POST to the Sentinel Hub Process API with geographic bounds, time range and a processing script (evalscript) that extracts and encodes the requested measurement.
+3. **Image encoding** — the Process API returns an image (typically PNG) where measurements are encoded as grayscale values (0–255).
+4. **Client decoding & scaling** — the client decodes the PNG into a raster and maps pixel values back into scientific units (NDVI, °C) using the same scaling factors applied server-side.
+5. **Calibration & downscaling** — we apply fusion and downscaling techniques to produce near-ground, walking-level estimates at neighborhood scale (targeting ~10 m precision), using in-situ sensors for calibration where available.
+6. **Fallback & caching** — cached tiles or synthetic data are used when external calls fail or to speed up the UI for demos.
 
 <div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:16px 0">
   <img src="assets/Overlays/Overlay1.jpg" alt="Overlay 1" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />

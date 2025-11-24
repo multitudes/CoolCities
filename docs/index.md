@@ -5,9 +5,13 @@
   </picture>
 </p>
 
-# CoolCities - 3rd Prize Cassini Hackathon 2025 - Germany
+<div style="text-align:center;">
+  <h1 style="font-size:56px">CoolCities</h1>
+  <h1 style="font-size:40px">3rd Prize Cassini Hackathon 2025</h1>
+  <h2 style="font-size:40px">Germany</h2>
+</div>
 
-# Team
+## Team
 
 - [Stephen](https://github.com/sjtobin) – Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.
 - [Laurent](https://github.com/multitudes) – iOS engineer with expertise in Swift, UX, and frontend development. Leads interface design and implementation, turning concepts into intuitive user experiences.
