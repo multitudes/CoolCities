@@ -8,6 +8,11 @@
   <div style="font-size:40px; font-weight: bold; line-height: 1.2;">Germany</div>
 </div>
 
+<div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:12px 0">
+  <img src="assets/sentinel2.jpeg" alt="Sentinel-2" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="assets/sentinel3.jpeg" alt="Sentinel-3" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+</div>
+
 ## Team
 
 - [Stephen](https://github.com/sjtobin) – Cognitive scientist and linguist (PhD) with experience in data analysis and computational modeling. Brings systems thinking and user insight to connect data and experience.
@@ -40,11 +45,6 @@ CoolCities translates EU space data into user comfort and wellness.
 
 We fetch and process satellite imagery from the Sentinel Hub service to generate the overlay layers used in the app.
 
-<div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:12px 0">
-  <img src="assets/sentinel2.jpeg" alt="Sentinel-2" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
-  <img src="assets/sentinel3.jpeg" alt="Sentinel-3" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
-</div>
-
 ### How it Works
 We produce two main overlay types:
 
@@ -75,7 +75,6 @@ The first tab presents the team, the concept, and GDPR compliance information. T
 We also integrated Apple's foundational LLMs into the app. Available in the latest SDK release, these models run privately and locally on the device. While smaller than server-side models, when enhanced with specific data and agentic capabilities, they provide sufficient computing power to generate suggestions or call specific functions—such as creating a route based on landmarks and weather data. Currently, the feature suggests a series of sightseeing points.
 
 <div style="text-align:center; margin: 20px 0;">
-  <!-- Replace the src below with your actual YouTube video URL (e.g. https://www.youtube.com/embed/VIDEO_ID) -->
   <iframe width="560" height="315" src="https://youtu.be/s37NLPnoUdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
