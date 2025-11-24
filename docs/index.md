@@ -76,7 +76,7 @@ We also integrated Apple's foundational LLMs into the app. Available in the late
 
 <div style="text-align:center; margin: 20px 0;">
   <!-- Replace the src below with your actual YouTube video URL (e.g. https://www.youtube.com/embed/VIDEO_ID) -->
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://youtu.be/s37NLPnoUdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 
