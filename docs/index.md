@@ -75,7 +75,7 @@ The first tab presents the team, the concept, and GDPR compliance information. T
 We also integrated Apple's foundational LLMs into the app. Available in the latest SDK release, these models run privately and locally on the device. While smaller than server-side models, when enhanced with specific data and agentic capabilities, they provide sufficient computing power to generate suggestions or call specific functions—such as creating a route based on landmarks and weather data. Currently, the feature suggests a series of sightseeing points.
 
 <div style="text-align:center; margin: 20px 0;">
-  <iframe width="560" height="315" src="https://youtu.be/s37NLPnoUdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/s37NLPnoUdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 
