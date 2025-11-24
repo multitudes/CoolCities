@@ -1,14 +1,11 @@
-<p align="center">
+<div style="text-align:center; margin-bottom: 30px;">
   <picture>
     <source srcset="assets/logo/logo-dark.png" media="(prefers-color-scheme: dark)">
-    <img src="assets/logo/logo-light.png" alt="CoolCities logo" width="280">
+    <img src="assets/logo/logo-light.png" alt="CoolCities logo" width="280" style="margin-bottom: 20px;">
   </picture>
-</p>
-
-<div style="text-align:center;">
-  <h1 style="font-size:56px">CoolCities</h1>
-  <h1 style="font-size:40px">3rd Prize Cassini Hackathon 2025</h1>
-  <h2 style="font-size:40px">Germany</h2>
+  <div style="font-size:56px; font-weight: bold; line-height: 1.2;">CoolCities</div>
+  <div style="font-size:40px; font-weight: bold; line-height: 1.2;">3rd Prize Cassini Hackathon 2025</div>
+  <div style="font-size:40px; font-weight: bold; line-height: 1.2;">Germany</div>
 </div>
 
 ## Team
@@ -21,7 +18,7 @@
 ## Our Idea
 - Category "Beyond Horizons – Redefining Travel with Space Innovation"
 
-CoolCities helps tourists and locals plan their days and routes to stay comfortable during hot weather and to avoid heat exposure. Using high-resolution satellite-derived temperature and vegetation maps, the app identifies cooler streets, shaded paths, parks and green corridors and suggests alternative routes and transport modes (walking, bikes, scooters, rollers) that prioritize lower heat exposure. The suggestions aim at improving comfort and health while encouraging low‑emission, active mobility.
+CoolCities helps tourists and locals plan their days and routes to stay comfortable during hot weather and to avoid heat exposure. Using high-resolution satellite-derived temperature and vegetation maps, the app identifies cooler streets, shaded paths, parks and green corridors and suggests alternative routes and transport modes (walking, bikes, scooters, roller skates) that prioritize lower heat exposure. The suggestions aim at improving comfort and health while encouraging low‑emission, active mobility.
 
 ### Why this matters
 
@@ -109,7 +106,7 @@ which then moved to:
 https://citiwatts.eu  
 https://citiwatts.eu/map   
 
-Some tools at our didposition:
+Some tools at our disposition:
 https://www.cassini.eu/hackathons/tools  
 
 Participants Playbook:
