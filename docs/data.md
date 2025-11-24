@@ -9,7 +9,6 @@
 
 We fetch and process satellite imagery from the Sentinel Hub service to generate the overlay layers used in the app.
 
-<!-- Sentinel satellite images: drop `sentinel2.jpeg` and `sentinel3.jpeg` into docs/assets/ -->
 <div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:12px 0">
   <img src="assets/sentinel2.jpeg" alt="Sentinel-2" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
   <img src="assets/sentinel3.jpeg" alt="Sentinel-3" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
@@ -54,13 +53,6 @@ Summary of the processing pipeline:
     *   **Request**: The app sends a POST request with a JSON body to the Process API. The JSON describes the geographic bounding box, time range, chosen data source, and includes a server-side processing script (evalscript) that computes the requested measurement.
     *   **Response**: The API can return a PNG image where scientific values are encoded as grayscale (0–255). The app decodes the PNG into a raster and converts pixel values back into floating-point scientific units (NDVI or temperature) using the same scaling applied server-side.
 
-## resources
-Register for a free account (one month trial) on the Sentinel Hub website to get your own client ID and secret:  
-https://www.sentinel-hub.com  
-
-**Sentinel Hub documentation**.  
-The "Process API" is the most relevant part for our app.    
-https://docs.sentinel-hub.com/api/latest/api/process/
 
 
 
