@@ -66,6 +66,20 @@ Summary of the processing pipeline:
   <img src="assets/Overlays/Overlay3.jpg" alt="Overlay 3" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
 </div>
 
+## The App
+
+During the hackathon, we developed an iOS prototype to demonstrate a possible implementation. This is by no means a definitive design.
+
+The first tab presents the team, the concept, and GDPR compliance information. The second tab displays the map with data overlays obtained from API requests. The routing feature is currently under development.
+
+We also integrated Apple's foundational LLMs into the app. Available in the latest SDK release, these models run privately and locally on the device. While smaller than server-side models, when enhanced with specific data and agentic capabilities, they provide sufficient computing power to generate suggestions or call specific functions—such as creating a route based on landmarks and weather data. Currently, the feature suggests a series of sightseeing points.
+
+<div style="text-align:center; margin: 20px 0;">
+  <!-- Replace the src below with your actual YouTube video URL (e.g. https://www.youtube.com/embed/VIDEO_ID) -->
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+
 ### Your Questions Answered
 
 *   **How do I get the token?**
@@ -115,7 +129,6 @@ Participants Playbook:
 
 Previous Hackathons code base for inspiration:  
 [https://github.com/cassinihackathons](https://github.com/cassinihackathons)
-
 
 Some interesting Hardware we did not have the chance to inspect yet:  
 [https://kineis.com(https://kineis.com)]  
