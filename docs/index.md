@@ -86,45 +86,46 @@ Summary of the processing pipeline:
 
 ## Resources
 The Cassini Hackathon 2025 call for submissions:  
-https://www.cassini.eu/hackathons/germany
+[https://www.cassini.eu/hackathons/germany](https://www.cassini.eu/hackathons/germany)
 
 Our project page:  
-https://taikai.network/cassinihackathons/hackathons/eu-space-consumer-experience/projects/cmhoxqgry003vxtcrhox121xq/idea 
+[https://taikai.network/cassinihackathons/hackathons/eu-space-consumer-experience/projects/cmhoxqgry003vxtcrhox121xq/idea](https://taikai.network/cassinihackathons/hackathons/eu-space-consumer-experience/projects/cmhoxqgry003vxtcrhox121xq/idea) 
 
 Business Design Playbook:  
-https://www.cassini.eu/hackathons/sites/default/files/2024-11/Business%20Design%20Playbook_update.pdf  
+[https://www.cassini.eu/hackathons/sites/default/files/2024-11/Business%20Design%20Playbook_update.pdf](https://www.cassini.eu/hackathons/sites/default/files/2024-11/Business%20Design%20Playbook_update.pdf)  
 
-Air Pollution API concept:
-https://openweathermap.org/api/air-pollution  
+Air Pollution API concept:  
+[https://openweathermap.org/api/air-pollution](https://overpass-turbo.eu)  
 
-Overpass-turbo is a web-based data mining and visualization tool for OpenStreetMap:
-https://overpass-turbo.eu  
+Overpass-turbo is a web-based data mining and visualization tool for OpenStreetMap:  
+[https://overpass-turbo.eu](https://overpass-turbo.eu)  
 
-A similar open source project which is more general in scope:
-https://www.hotmaps-project.eu
-which then moved to:
-https://citiwatts.eu  
-https://citiwatts.eu/map   
+A similar open source project which is more general in scope:  
+[https://www.hotmaps-project.eu](https://citiwatts.eu)
 
-Some tools at our disposition:
-https://www.cassini.eu/hackathons/tools  
+which then moved to:  
+[https://citiwatts.eu](https://citiwatts.eu)  
+[https://citiwatts.eu/map](https://citiwatts.eu/map) 
 
-Participants Playbook:
-https://www.cassini.eu/hackathons/sites/default/files/2025-11/Participant%20Playbook_10th%20CASSINI%20Hackathon_1.pdf  
+Some tools at our disposition:  
+[https://www.cassini.eu/hackathons/tools](https://www.cassini.eu/hackathons/tools)  
 
-Previous Hackathons code base for inspiration:
-https://github.com/cassinihackathons  
+Participants Playbook:  
+[https://www.cassini.eu/hackathons/sites/default/files/2025-11/Participant%20Playbook_10th%20CASSINI%20Hackathon_1.pdf](https://www.cassini.eu/hackathons/sites/default/files/2025-11/Participant%20Playbook_10th%20CASSINI%20Hackathon_1.pdf)
+
+Previous Hackathons code base for inspiration:  
+[https://github.com/cassinihackathons](https://github.com/cassinihackathons)
 
 
-Some interesting Hardware we did not have the chance to inspect yet:
-https://kineis.com  
+Some interesting Hardware we did not have the chance to inspect yet:  
+[https://kineis.com(https://kineis.com)]  
 
-The satellites:
-https://dataspace.copernicus.eu/data-collections/copernicus-sentinel-missions  
+The satellites:  
+[https://dataspace.copernicus.eu/data-collections/copernicus-sentinel-missions](https://dataspace.copernicus.eu/data-collections/copernicus-sentinel-missions)
 
-Register for a free account (one month trial) on the Sentinel Hub website to get your own client ID and secret:  
-https://www.sentinel-hub.com  
+You can register for a free account (one month trial) on the Sentinel Hub website to get your own client ID and secret and make API calls:  
+[https://www.sentinel-hub.com ](https://www.sentinel-hub.com ) 
 
 **Sentinel Hub documentation**.  
 The "Process API" is the most relevant part for our app:  
-https://docs.sentinel-hub.com/api/latest/api/process/
+[https://docs.sentinel-hub.com/api/latest/api/process/](https://docs.sentinel-hub.com/api/latest/api/process/)
