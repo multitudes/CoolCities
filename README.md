@@ -5,8 +5,8 @@ See the documentation page at [https://multitudes.github.io/CoolCities/](https:/
 
 <div style="text-align:center; margin-bottom: 30px;">
   <picture>
-    <source srcset="assets/logo/logo-dark.png" media="(prefers-color-scheme: dark)">
-    <img src="assets/logo/logo-light.png" alt="CoolCities logo" width="280" style="margin-bottom: 20px;">
+    <source srcset="docs/assets/logo/logo-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="docs/assets/logo/logo-light.png" alt="CoolCities logo" width="280" style="margin-bottom: 20px;">
   </picture>
   <div style="font-size:56px; font-weight: bold; line-height: 1.2;">CoolCities</div>
   <div style="font-size:40px; font-weight: bold; line-height: 1.2;">3rd Prize Cassini Hackathon 2025</div>
@@ -14,8 +14,8 @@ See the documentation page at [https://multitudes.github.io/CoolCities/](https:/
 </div>
 
 <div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:12px 0">
-  <img src="assets/sentinel2.jpeg" alt="Sentinel-2" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
-  <img src="assets/sentinel3.jpeg" alt="Sentinel-3" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="docs/assets/sentinel2.jpeg" alt="Sentinel-2" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="docs/assets/sentinel3.jpeg" alt="Sentinel-3" style="width:40%;max-width:340px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
 </div>
 
 ## Team
@@ -66,9 +66,9 @@ Summary of the processing pipeline:
 6. **Fallback & caching** — cached tiles or synthetic data are used when external calls fail or to speed up the UI for demos.
 
 <div style="display:flex;gap:12px;justify-content:center;align-items:center;margin:16px 0">
-  <img src="assets/Overlays/Overlay1.jpg" alt="Overlay 1" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
-  <img src="assets/Overlays/Overlay2.jpg" alt="Overlay 2" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
-  <img src="assets/Overlays/Overlay3.jpg" alt="Overlay 3" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="docs/assets/Overlays/Overlay1.jpg" alt="Overlay 1" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="docs/assets/Overlays/Overlay2.jpg" alt="Overlay 2" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
+  <img src="docs/assets/Overlays/Overlay3.jpg" alt="Overlay 3" style="width:32%;max-width:300px;height:auto;border:1px solid #ddd;padding:4px;background:#fff" />
 </div>
 
 ## The App
