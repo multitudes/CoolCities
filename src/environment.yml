@@ -1,0 +1,10 @@
+name: ht
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - conda-forge::openeo
+  - python-dotenv
+  - anaconda::rasterio
+  - matplotlib
+prefix: /home/linux/anaconda3/envs/ht
